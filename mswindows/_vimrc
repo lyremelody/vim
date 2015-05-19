@@ -28,26 +28,63 @@ function MyDiff()
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
 
-"���﷨����
+"打开语法高亮
 syntax on
 
-"���ҽ��������ʾ
-set hlsearch
+set helplang=cn
 
-"��ʾ�к�
+set autoread
+
+"设置背景
+colorscheme desert
+set background=dark
+
+"设置命令行高度
+set cmdheight=2
+
+"显示行号
 set nu
 
-"tab����
+"设置标尺
+set ruler
+
+set laststatus=2
+
+"for tab {
+"根据文件中其他地方的缩进空格个数来确定一个tab是多少个空格
+set smarttab
+
+"tab宽度
 set tabstop=4
 
-"���ñ���
-colorscheme desert
+"每一级缩进是4个空格
+set shiftwidth=4
 
-"�����ļ���ʽ
-set ff=unix
+"将tab替换成空格
+set expandtab
+"}
 
-"�����ɱ���
+"for search {
+"检索时忽略大小写
+set ignorecase
+
+"查找结果高亮显示
+set hlsearch
+"}
+
+"for backup {
 set nobackup
+set nowb
+set noswapfile
+"}
 
-"��󻯴���
+"使用utf-8或gbk打开文件
+set fileencodings=uft-8,gbk
+
+"设置编码
+set encoding=utf-8
+
+set ffs=unix,dos,mac
+
+"最大化窗口
 au GUIEnter * simalt ~x
